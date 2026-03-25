@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #007AFF;
+  --color-on-primary: #FFFFFF;
+  --color-background: #FFFFFF;
+  --color-surface: #F2F2F7;
+  --color-surface-variant: #E5E5EA;
+  --color-on-surface: #232C51;
+  --color-on-surface-variant: #3C3C43;
+  --color-secondary: #B90034;
+  --color-outline: #6C759E;
+  --color-outline-variant: #A2ABD7;
+  
+  --color-system-blue: #007AFF;
+  --color-system-green: #34C759;
+  --color-system-orange: #FF9500;
+  --color-system-pink: #FF2D55;
+  --color-system-purple: #AF52DE;
+  --color-system-teal: #5AC8FA;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Inter", sans-serif;
+  
+  --radius-xl: 1.5rem;
+  --radius-lg: 1rem;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-sans antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.ios-blur {
+  @apply backdrop-blur-xl bg-white/80;
+}
+
+.animate-in {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-from-bottom {
+  from { transform: translateY(1rem); }
+  to { transform: translateY(0); }
+}
+
+.fade-in {
+  animation-name: fade-in;
+}
+
+.slide-in-from-bottom-4 {
+  animation-name: slide-in-from-bottom;
+}
